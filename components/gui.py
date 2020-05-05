@@ -64,18 +64,11 @@ class Application(tk.Frame):
 
     def opendoneWindow(self): 
       
-        # Toplevel object which will  
-        # be treated as a new window 
         doneWindow = tk.Toplevel(self) 
     
-        # sets the title of the 
-        # Toplevel widget 
         doneWindow.title("Search done") 
-    
-        # sets the geometry of toplevel 
         doneWindow.geometry("200x50") 
     
-        # A Label widget to show in toplevel 
         tk.Label(doneWindow,  
             text ="Your search is saved as a csv!").pack()
 
@@ -98,7 +91,7 @@ class Application(tk.Frame):
         self.progressbar["value"]=currentValue
         
     def update_progressbar(self):
-        currentValue = progress(self.path)*10
+        currentValue = progress(self.path)*50
         if currentValue == self.progressbar["maximum"]:
             self.finish_process()
         self.progress_update(currentValue)
@@ -116,14 +109,12 @@ class Application(tk.Frame):
         self.url = url
 
     def check_search(self):
-        pages_full = 0
-        #pages_full = process_page(self.url, find_pages=True, page_size=50)
+        pages_full = process_page(self.url, find_pages=True, page_size=50)
         if pages_full > 20:
             self.pages_full=20
         else:
             self.pages_full = pages_full 
-        self.pages_full = 2
-        self.progressbar["maximum"]=self.pages_full*10
+        self.progressbar["maximum"]=self.pages_full*50
 
     
 

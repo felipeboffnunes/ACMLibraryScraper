@@ -6,7 +6,7 @@ from pathos.multiprocessing import ProcessPool as Pool
 from processing import process_page, create_urls, parse_search_term
 
 def call_processes(url, path, pages):
-    urls = create_urls(10, int(pages), url)
+    urls = create_urls(50, int(pages), url)
 
     # I want a better way to do this
     paths = []
