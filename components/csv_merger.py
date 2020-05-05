@@ -4,6 +4,8 @@ import pandas as pd
 
 def progress(path):
     path_r = path.replace('/', '\\')
+    if not os.path.exists(rf'{path_r}\\results'):
+        os.makedirs(rf'{path_r}\\results')
     os.chdir(rf'{path_r}\\results')
     all_filenames = [i for i in glob.glob('Page_*')]
     return len(all_filenames)
