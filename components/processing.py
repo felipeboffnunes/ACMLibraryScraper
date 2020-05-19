@@ -1,4 +1,4 @@
-def process_page(url, path='', find_pages=False, page_size=20,):
+def process_page(url, path='', find_pages=False, page_size=50):
     import os
     import re
     import csv
@@ -163,7 +163,7 @@ def process_page(url, path='', find_pages=False, page_size=20,):
     return 
 
 # Returns list of urls for scraping
-def create_urls(page_size=20, pages=10, base_url=''):
+def create_urls(page_size=50, pages=10, base_url=''):
     urls = [base_url+'&pageSize={}'.format(page_size)]
     for i in range(pages-1):
         next_url = base_url + '&pageSize={}&startPage={}'.format(page_size, i+1)

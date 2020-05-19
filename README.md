@@ -11,3 +11,6 @@ pip install -r requirements.txt
 Run:
 python main.py
 
+Tutorial in Portuguese (BR):
+https://youtu.be/gbpSU-iAGMw
+
