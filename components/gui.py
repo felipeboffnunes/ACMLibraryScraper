@@ -105,7 +105,7 @@ class Application(tk.Frame):
 
     def set_url(self):
         search_term = parse_search_term(self.search_term.get('1.0', 'end'))
-        url = 'https://dl.acm.org/action/doSearch?AllField={}'.format(search_term)
+        url = f'{search_term}'
         self.url = url
 
     def check_search(self):
